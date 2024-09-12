@@ -1,24 +1,16 @@
 package Pertemuan2;
 public class P2_Percobaan3_pertanyaan1_25 {
     public static void main(String[] args) {
-        System.out.println("\t\t\t\tKARTU RENCANA STUDI (KRS)\n");
-        System.out.println("NIM\t\t\t\t: 24410702006");
-        System.out.println("NAMA\t\t\t\t: RENY AMBARWATI");
-        System.out.println("PRGRAM STUDI\t\t\t: Diploma IV Teknik Informatika");
-        System.out.println("KELAS\t\t\t\t: 1G\n");
-        System.out.println("--------------------------------------------------------------------------------------------------------");
-        System.out.println("|\tKODE MK\t\t|\t\tMATA KULIAH\t\t\t|\tSKS\t|\tJAM\t|");
-        System.out.println("--------------------------------------------------------------------------------------------------------");
-        System.out.println("|\tRTI241001\t|Pancasila\t\t\t\t\t|\t2\t|\t2\t|");
-        System.out.println("|\tRTI241002\t|Konsep Teknologi Informasi\t\t\t|\t2\t|\t4\t|");
-        System.out.println("|\tRTI241003\t|Critical Thinking dan Problem Solving\t\t|\t2\t|\t4\t|");
-        System.out.println("|\tRTI241004\t|Matematika Dasar\t\t\t\t|\t3\t|\t6\t|");
-        System.out.println("|\tRTI241005\t|Rekayasa Perangkat Lunak\t\t\t|\t2\t|\t4\t|");
-        System.out.println("|\tRTI241006\t|Dasar Pemrograman\t\t\t\t|\t2\t|\t4\t|");
-        System.out.println("|\tRTI241007\t|Praktikum Dasar Pemrograman\t\t\t|\t3\t|\t6\t|");
-        System.out.println("|\tRTI241008\t|Keselamatan dan Kesehatan Kerja\t\t|\t2\t|\t4\t|");
-        System.out.println("--------------------------------------------------------------------------------------------------------");
-        System.out.println("|\t\t\t|\t\t\tJUMLAH\t\t\t|\t18\t|\t34\t|");
-        System.out.println("--------------------------------------------------------------------------------------------------------");
-    } 
+        System.out.println("----------------------------------------------");
+        System.out.println("--Data Mahasiswa Jurusan Teknologi Informasi--");
+        System.out.println("----------------------------------------------");
+        System.out.println("Nama\t\t: Reny Ambarwati");
+        System.out.println("NIM\t\t: 24410702006");
+        System.out.println("Kelas\t\t: 1-G");
+        System.out.println("No Absen\t: 25");
+        System.out.println("Prodi\t\t: D-IV Teknik Informatika");
+        System.out.println("Alamat\t\t: Jl. Simpang Remujung, Kec. Lowokwaru, Kota Malang");
+        System.out.println("No. HP\t\t: 085798475896");
+        System.out.println("Hobi\t\t: Memasak");
+    }
 }
