@@ -27,8 +27,8 @@ public class Siakad25 {
 
        nilaiAkhir = ((0.2 * nilaiKuis) + (0.15 * nilaiTugas) + (0.3 * nilaiUTS) + (0.35 * nilaiUAS));
 
-       System.out.println("Nama: " + nama + "NIM: " + nim);
-       System.out.println("Kelas: " + kelas + "Absen: " + absen);
+       System.out.println("Nama: " + nama + " NIM: " + nim);
+       System.out.println("Kelas: " + kelas + " Absen: " + absen);
        System.out.println("Nilai Akhir: " + nilaiAkhir);
     } 
 }
