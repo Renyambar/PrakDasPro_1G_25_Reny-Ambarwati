@@ -16,6 +16,7 @@ public class Kafe25 {
       System.out.print("Masukkan jumlah pembelian roti: ");
       jmlRoti = input.nextInt();
       totalHarga = (jmlKopi * hargaKopi) + (jmlTeh * hargaTeh) + (jmlRoti * hargaRoti);
+      byte totalByte = (byte) totalHarga;
       nominalBayar = totalHarga - (diskon * totalHarga);
       int nominalInt = (int) nominalBayar;
 
