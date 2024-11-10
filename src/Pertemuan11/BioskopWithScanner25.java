@@ -36,6 +36,7 @@ public class BioskopWithScanner25 {
                 } else {
                     System.out.println("Baris dan kolom tidak tersedia. Silakan masukkan ulang");
                 }
+                
                 System.out.print("Input penonton lainnya? (y/n): ");
                 next = sc.nextLine();
                 if (next.equalsIgnoreCase("n")) {
