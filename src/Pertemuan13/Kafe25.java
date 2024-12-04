@@ -4,57 +4,55 @@ import java.util.Scanner;
 
 public class Kafe25 {
     public static void main(String[] args) {
-        Menu("Andi", true, "DISKON50");
+        Menu();
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc.nextInt();
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
-        sc.nextLine();
+        int pilihanMenu, total;
+        int banyakItem; int totalKeseluruhan= 0;
+        while (true) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+            pilihanMenu = sc.nextInt();
+            System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+            banyakItem = sc.nextInt();
+            sc.nextLine();
+
+           
+            int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem);
+            totalKeseluruhan += totalHarga;
+            
+            System.out.print("Apakah ingin menambah pesanan? ");
+            String tambah = sc.nextLine();
+            if (tambah.equalsIgnoreCase("n")) {
+                break;
+            }
+        }
+        
         System.out.print("Masukkan kode promo: ");
         String kodePromo = sc.nextLine();
-
-       
-        int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem, kodePromo);
-        System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
-    }
-
-    public static int hitungTotalHarga(int pilihanMenu, int banyakItem, String kodePromo) {
-        int[] hargaItem = {15000, 20000, 22000, 12000, 10000, 18000};
-        int hargaTotal;
-        // int hargaTotal = int hargaTotal = hargaItem[pilihanMenu-1] * banyakItem;
         switch (kodePromo) {
             case "DISKON50":
-             hargaTotal = hargaItem[pilihanMenu-1] * banyakItem - (int)((hargaItem[pilihanMenu-1] * banyakItem)*0.5);
+                total = totalKeseluruhan - (int)(totalKeseluruhan*0.5);
                 break;
             case "DISKON30":
-             hargaTotal = hargaItem[pilihanMenu-1] * banyakItem - (int)((hargaItem[pilihanMenu-1] * banyakItem)*0.3);
+                total = totalKeseluruhan - (int)(totalKeseluruhan*0.3);
+                break;
             default:
-            hargaTotal = hargaItem[pilihanMenu-1] * banyakItem;
+                total = totalKeseluruhan;
                 break;
         }
+        
+        System.out.println("Total harga untuk pesanan Anda: Rp" + total);
+    }
+
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
+        int[] hargaItem = {15000, 20000, 22000, 12000, 10000, 18000};
+        int hargaTotal;
+        hargaTotal = hargaItem[pilihanMenu-1] * banyakItem;
         return hargaTotal;
     }
 
-    public static void Menu(String namaPelanggan, boolean isMember,String kodePromo){
-        System.out.println("Selamat Datang, "+ namaPelanggan+ "!");
-
-        if (isMember) {
-            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
-        }
-
-        switch (kodePromo) {
-            case "DISKON50":
-                System.out.println("Berikan diskon 50%");
-                break;
-            case "DISKON30":
-                System.out.println("Berikan diskon 30%");
-                break;
-            default:
-            System.out.println("Kode Invalid");
-                break;
-        }
+    public static void Menu(){
+        System.out.println("Selamat Datang!");
 
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
