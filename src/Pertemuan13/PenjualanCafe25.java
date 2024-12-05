@@ -3,42 +3,76 @@ package Pertemuan13;
 import java.util.Scanner;
 
 public class PenjualanCafe25 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String[] menu = {"Kopi", "Teh", "Es Degan", "Roti Bakar", "Gorengan"};
-        int[][] jml =new int[][]{
-            {20, 20, 25, 20, 10, 60, 10},
-            {30, 80, 40, 10, 15, 20, 25},
-            {5, 9, 20, 25, 10, 5, 45},
-            {50, 8, 17, 18, 10, 30, 6},
-            {15, 10, 16, 15, 10, 10, 55}
-        };
-        while (true) {
-            System.out.println("Menu: ");
-            System.out.println("0. Exit");
-            System.out.println("1. Tampilkan rekap data penjualan");
-            System.out.println("2. Tampilkan menu dengan penjualan tertinggi");
-            System.out.println("3. Tampilkan rata rata penjualan setiap menu");
-            System.out.print("Pilih menu: ");
-            int input = sc.nextInt();
-
-            switch (input) {
-                case 1:
-                    tampilData(menu, jml);
-                    break;
-                case 2:
-                    System.out.println("Menu dengan penjualan tertinggi adalah "+ menu[maxMenu(menu, jml)]);
-                    break;
-                case 3:
-                    hitungRata(menu, jml);
-                    break;
-                case 0:
-                    return;
-                default:
-                    break;
+    static Scanner sc = new Scanner(System.in);
+        public static void main(String[] args) {
+            
+            String[] menu = {"Kopi", "Teh", "Es Degan", "Roti Bakar", "Gorengan"};
+            int[][] jml =new int[][]{
+                {20, 20, 25, 20, 10, 60, 10},
+                {30, 80, 40, 10, 15, 20, 25},
+                {5, 9, 20, 25, 10, 5, 45},
+                {50, 8, 17, 18, 10, 30, 6},
+                {15, 10, 16, 15, 10, 10, 55}
+            };
+            while (true) {
+                System.out.println("Menu: ");
+                System.out.println("0. Exit");
+                System.out.println("1. Tampilkan rekap data penjualan");
+                System.out.println("2. Tampilkan menu dengan penjualan tertinggi");
+                System.out.println("3. Tampilkan rata rata penjualan setiap menu");
+                System.out.println("4. Edit data penjualan");
+                System.out.print("Pilih menu: ");
+                int input = sc.nextInt();
+    
+                switch (input) {
+                    case 1:
+                        tampilData(menu, jml);
+                        break;
+                    case 2:
+                        System.out.println("Menu dengan penjualan tertinggi adalah "+ menu[maxMenu(menu, jml)]);
+                        break;
+                    case 3:
+                        hitungRata(menu, jml);
+                        break;
+                    case 4:
+                        while (true) {
+                           editData(menu, jml);
+                           System.out.print("Apakah ingin mengedit data lagi?(y/n) ");
+                           String editLagi = sc.nextLine();
+                           sc.nextLine();
+                           if (editLagi.equalsIgnoreCase("n")) {
+                            break;
+                           }
+                           break;
+                        }
+                        break;    
+                    case 0:
+                        return;
+                    default:
+                        break;
+                }
             }
         }
+        //mengedit data
+        static int editData(String[] menu, int[][] jml){
+            System.out.print("Masukkan nama menu yang ingin diedit: ");
+            String editMenu = sc.nextLine();
+            sc.nextLine();
+            System.out.print("Masukkan hari yang datanya ingin diedit: ");
+            int editJml = sc.nextInt();
+            int edit = 0;
+            for (int i = 0; i < jml.length; i++) {
+                if (editMenu.equalsIgnoreCase(menu[i])) {
+                    edit = i;
+                }
+            }
+            System.out.print("Ubah data: ");
+            int ubah = sc.nextInt();
+            jml[edit][editJml-1]=ubah;
+            return ubah;
+            
     }
+
     //menampilkan data
     static void tampilData(String[] menu, int[][] jml){
         System.out.println("============REKAP PENJUALAN CAFE==================");
@@ -84,4 +118,5 @@ public class PenjualanCafe25 {
         }
         return rataPerMenu;
     }
+
 }
