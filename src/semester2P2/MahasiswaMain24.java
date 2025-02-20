@@ -12,5 +12,9 @@ public class MahasiswaMain24 {
         mhsl.ubahKelas("SI 2K");
         mhsl.updateIpk (3.60);
         mhsl.tampilkanInformasi();
+
+        Mahasiswa24 mhs2 = new Mahasiswa24("Annisa Nabila", "24141720160", 3.25, "TI 2L");
+        mhs2.updateIpk(3.30);
+        mhs2.tampilkanInformasi();
     }
 }
