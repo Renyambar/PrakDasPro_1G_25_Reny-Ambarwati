@@ -31,6 +31,5 @@ public class MataKuliah24 {
         nama = nm;
         this.sks = sks;
         this.jumlahJam = jumlahJam;
-
     }
 }
