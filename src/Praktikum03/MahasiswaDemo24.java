@@ -21,6 +21,6 @@ public class MahasiswaDemo24 {
             arrayOfMahasiswa[i].ipk = Float.parseFloat(dummy);
             System.out.println("-------------------------------");
         }
-        Mahasiswa24.cetakInfo(arrayOfMahasiswa);      
+        Mahasiswa24.cetakInfo(arrayOfMahasiswa);
     }
 }
