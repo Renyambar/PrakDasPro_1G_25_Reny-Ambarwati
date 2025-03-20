@@ -8,11 +8,11 @@ public class Mahasiswa24 {
     Mahasiswa24(){
     }
 
-    Mahasiswa24(String nm, String name, String kls, double ip){
-        nim = nm;
-        nama = name;
-        kelas = kls;
-        ipk = ip;
+    Mahasiswa24(String nim, String nama, String kelas, double ipk){
+        this.nim = nim;
+        this.nama = nama;
+        this.kelas = kelas;
+        this.ipk = ipk;
     }
 
     void tampilInformasi(){
@@ -20,5 +20,6 @@ public class Mahasiswa24 {
         System.out.println("NIM: "+nim);
         System.out.println("Kelas: "+kelas);
         System.out.println("IPK: "+ipk);
+        System.out.println("-----------------");
     }
 }
