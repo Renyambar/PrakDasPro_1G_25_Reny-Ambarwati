@@ -1,14 +1,14 @@
 package Praktikum05;
 public class MahasiswaBerprestasi24 {
     Mahasiswa24[] listMhs = new Mahasiswa24[5];
-    int idx;
+    int idx, jumMhs=5;
     public String nim;
     public String nama;
     public String kelas;
     public double ipk;
 
-    public MahasiswaBerprestasi24(int kapasitas) {
-        listMhs = new Mahasiswa24[kapasitas];
+    public MahasiswaBerprestasi24() {
+        listMhs = new Mahasiswa24[jumMhs];
         idx = 0;
     }
 
@@ -63,6 +63,36 @@ public class MahasiswaBerprestasi24 {
                 j--;
             }
             listMhs[j]=temp;
+        }
+    }
+
+    int sequentialSearching(double cari){
+        int posisi = -1;
+        for (int j = 0; j < listMhs.length; j++) {
+            if (listMhs[j].ipk==cari) {
+                posisi=j;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    void tampilPosisi(double x, int pos){
+        if (pos!=-1) {
+            System.out.println("data mahasiswa dengan IPK : "+x+" ditemukan pada indeks "+pos);
+        } else {
+            System.out.println("data " +x+" ditemukan");
+        }
+    }
+
+    void tampilDataSearch(double x, int pos){
+        if (pos!=-1) {
+            System.out.println("nim\t : "+listMhs[pos].nim);
+            System.out.println("nama\t : "+listMhs[pos].nama);
+            System.out.println("kelas\t : "+listMhs[pos].kelas);
+            System.out.println("ipk\t : "+x);
+        } else {
+            System.out.println("Data mahasiswa dengan IPK "+x+" tidak ditemukan");
         }
     }
 }
