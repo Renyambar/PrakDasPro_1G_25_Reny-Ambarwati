@@ -12,7 +12,9 @@ public class DosenMain24 {
             System.out.println("3. Sorting ASC (Bubble Sort)");
             System.out.println("4. Sorting DSC (Selection Sort)");
             System.out.println("5. Sorting DSC (Insertion Sort)");
-            System.out.println("6. Keluar");
+            System.out.println("6. Cari Dosen Berdasarkan Nama");
+            System.out.println("7. Cari Dosen Berdasarkan Usia");
+            System.out.println("8. Keluar");
             System.out.print("Pilih menu: ");
             int menu = sc.nextInt();
             sc.nextLine(); 
@@ -48,6 +50,22 @@ public class DosenMain24 {
                     data.tampil();
                     break;
                 case 6:
+                    System.out.println("--------------------------------");
+                    System.out.println("Pencarian Dosen Berdasarkan Nama");
+                    System.out.println("--------------------------------");
+                    System.out.print("Masukkan nama dosen yang dicari: ");
+                    String namaDsn = sc.nextLine();
+                    data.PencarianDataSequential(namaDsn);
+                    break;
+                case 7:
+                    System.out.println("--------------------------------");
+                    System.out.println("Pencarian Dosen Berdasarkan Usia");
+                    System.out.println("--------------------------------");
+                    System.out.print("Masukkan usia dosen yang dicari: ");
+                    int cariUsia = sc.nextInt();
+                    data.CariDataBerdasarkanUsia(cariUsia);
+                    sc.close();
+                case 8:
                     System.out.println("Keluar dari program.");
                     sc.close();
                     return;
