@@ -4,7 +4,6 @@ public class Mahasiswa24 {
     int nilai;
 
     Mahasiswa24(){
-
     }
 
     Mahasiswa24(String nama, String nim, String kelas){

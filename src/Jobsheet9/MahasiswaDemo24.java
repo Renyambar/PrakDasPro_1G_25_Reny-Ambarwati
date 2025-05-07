@@ -1,7 +1,5 @@
 package Jobsheet9;
-
 import java.util.Scanner;
-
 public class MahasiswaDemo24 {
     public static void main(String[] args) {
         StackTugasMahasiswa24 stack = new StackTugasMahasiswa24(5);
@@ -14,6 +12,8 @@ public class MahasiswaDemo24 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
+            System.out.println("5. Melihat Tugas Terbawah");
+            System.out.println("6. Melihat Jumlah Tugas");
             System.out.print("Pilih: ");
             pilih = scan.nextInt();
             scan.nextLine();
@@ -50,10 +50,19 @@ public class MahasiswaDemo24 {
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
                     break;
+                case 5:
+                    Mahasiswa24 terbawah = stack.bottom();
+                    if (terbawah != null) {
+                        System.out.println("Tugas pertama dikumpulkan oleh: " + terbawah.nama);
+                    }
+                    break;
+                case 6:
+                    System.out.println("Jumlah tugas yang sudah dikumpulkan: " + stack.count());
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid");
                     break;
             }
-        } while (pilih >= 1 && pilih <= 4);
+        } while (pilih >= 1 && pilih <= 6);
     }
 }
