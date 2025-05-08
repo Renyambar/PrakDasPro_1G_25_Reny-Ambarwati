@@ -1,5 +1,4 @@
 package P2Jobsheet10;
-
 public class AntrianLayanan24 {
     Mahasiswa24[] data;
     int front;
@@ -91,6 +90,16 @@ public class AntrianLayanan24 {
      public int getJumlahAntrian(){
         return size;
      }
+
+     public void lihatAkhir(){
+        if (IsEmpty()) {
+            System.out.println("Antrian kosong.");
+        }else{
+            System.out.print("Mahasiswa terakhir: ");
+            System.out.println("NIM - NAMA - PRODI - KELAS");
+            data[rear].tampilkanData();
+        }
+    }
 }
 
 
